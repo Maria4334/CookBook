@@ -1,0 +1,121 @@
+{% load static %}
+<html>
+    <head>
+        <title>Смачно та корисно</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+            <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+			<link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+			<link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+		<!--	<link rel="stylesheet" href="{% static 'css/blog.css' %}">  -->
+    </head>
+    <body>
+	
+	<div class="page-header">
+        <!-- RD Navbar-->
+              <center>
+				  <a href="#">
+				  <img align = "center" src="{% static 'images/logo3.jpg' %}" alt=""/>
+				  </a>
+              </center>
+			<center>			  
+				<br>
+                  <!-- RD Navbar Nav		-->
+                  <ul  style = "border:0px solid MediumVioletRed; list-style: none; list-style-type: none;">
+                    <li class="rd-nav-item active"><a class="rd-nav-link" style = "border:1px solid MediumVioletRed; display: inline-block;" href="/">На головну</a>
+                    </li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" style = "border:1px solid MediumVioletRed; display: inline-block;" href="{% url 'about' %}">ПРО АВТОРА</a>
+                    </li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" style = "border:1px solid MediumVioletRed; display: inline-block;" href="{% url 'book' %}">Всі рецепти</a>
+                    </li>
+					<li class="rd-nav-item"> 
+					<a href="{% url 'post_new' %}" class="rd-nav-link" style = "border:1px solid MediumVioletRed; display: inline-block;">
+					<span class="glyphicon glyphicon-plus"></span>ДОДАТИ РЕЦЕПТ<span class="glyphicon glyphicon-plus"></span>
+					</a>   
+					</li>
+				   </ul>
+            </center> 	
+        
+            
+            <h1 align="center"><a href="/">Смачно та корисно!</a></h1>
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div >
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+		 <footer class="section footer-classic bg-gray-950 page-header"">
+        <div class="footer-classic-main">
+          <div class="container"> 
+            <div class="row row-30">
+              <div class="col-lg-3">
+                <div class="row row-30 row-xl-40">
+                  <div class="col-6 col-md-3 col-lg-12">
+                    <article class="counter-minimal">
+                      <div class="counter-minimal-counter">
+                        <div class="counter">97 %</div>
+                      </div>
+                      <p class="counter-minimal-title">Graduates</p>
+                    </article>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-12">
+                    <article class="counter-minimal">
+                      <div class="counter-minimal-counter">
+                        <div class="counter">30</div><span class="counter-postfix">+</span>
+                      </div>
+                      <p class="counter-minimal-title">Certified Teachers</p>
+                    </article>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-12">
+                    <article class="counter-minimal">
+                      <div class="counter-minimal-counter counter">8</div>
+                      <p class="counter-minimal-title">Student Campuses</p>
+                    </article>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-12">
+                    <article class="counter-minimal">
+                      <div class="counter-minimal-counter counter">650</div>
+                      <p class="counter-minimal-title">Students</p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+           
+              <div class="col-sm-6 col-lg-5 col-xl-4">
+                <div class="row row-50 row-xl-70">
+                  <div class="col-12">
+                    <h3>About Us</h3>
+                    <p>Since 1990, our college provides students with high-quality professional education. Together with us, you will have deeper knowledge of the subjects important for your future profession.</p>
+                  </div>
+                  <div class="col-12">
+                    <h3>Newsletter</h3>
+                    <p>Keep up with our weekly news and updates on education. Enter your e-mail and subscribe to our newsletter.</p>
+                    <!-- RD Mailform-->
+                    <form class="rd-form rd-mailform form-inline subscribe-form" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
+                      <div class="form-wrap">
+                        <input class="form-input" id="subscribe-form-2-email" type="email" name="email" data-constraints="@Email @Required">
+                        <label class="form-label" for="subscribe-form-2-email">E-mail</label>
+                      </div>
+                      <div class="form-button">
+                        <button class="button button-primary-gradient button-icon-only" type="submit" aria-label="subscribe"><span class="icon icon-md mdi mdi-email-outline"></span></button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-classic-aside">
+          <div class="container">
+            <!-- Rights-->
+            <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>All Rights Reserved.</span><span>&nbsp;</span><br class="d-sm-none"/><a href="#">Terms of Use</a><span> and</span><span>&nbsp;</span><a href="#">Privacy Policy</a>. Design&nbsp;by&nbsp;<a href="https://www.templatemonster.com/">TemplateMonster</a></p>
+          </div>
+        </div>
+      </footer>
+    </body>
+</html>
